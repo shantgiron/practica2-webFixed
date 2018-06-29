@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+    <title>CRUD Sencillo aplicado a estudiantes </title>
+
+</head>
+<body>
+
+        <div>
+            <form class="navbar-form navbar-left" action="@{insertar}" method="get">
+                <button type="submit" class="btn btn-primary">Agregar nuevo estudiante</button>
+            </form>
+        </div>
+    </div>
+</nav>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <button type="button" class="btn btn-primary" value="${header}">
+            Estudiantes registrados
+            <span class="badge" text="${size}"></span>
+        </button>
+    </div>
+
+    <table class="table">
+        <thread>
+            <tr>
+
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Matricula</th>
+                <th>Telefono</th>
+            </tr>
+        </thread>
+        <tbody>
+        <tr each="estudiante : ${listaEstudiantes}">
+            <td text="${estudiante.nombre}"></td>
+            <td text="${estudiante.apellido}"></td>
+            <td text="${estudiante.matricula}"></td>
+            <td text="${estudiante.telefono}"></td>
+            <td>
+                <div class="btn-group" role="group" aria-label="...">
+                    <button type="button" class="btn btn-default"><a
+                            href="@{ver(matricula=${estudiante.matricula})}">Visualizar</a></button>
+                    <button type="button" class="btn btn-default"><a
+                            href="@{editar(matricula=${estudiante.matricula})}">Editar</a></button>
+                    <button type="button" class="btn btn-default"><a
+                            href="@{borrar(matricula=${estudiante.matricula})}">Borrar</a></button>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</body>
+</html>
